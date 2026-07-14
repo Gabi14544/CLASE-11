@@ -16,7 +16,30 @@ while True:
         if monto_str.isdigit():
             monto = int(monto_str)
             print(cuenta.depositar(monto))
+        else:
+            print("Error,no es un entero")
+
     if opcion == "2":
-        pass
+        monto_str = input("Monto a Retirar: ")
+        if int(monto_str) > cuenta.saldo:
+            print(f"Fondos Insuficientes | Dinero Disponible: {cuenta.saldo}")
+
+        elif monto_str.isdigit():
+            monto = int(monto_str)
+            print(cuenta.retirar(monto))
+
+        else:
+            print("Error, no es un entero")
+
+        # monto_str = input("Monto a Retirar: ")
+        # if monto_str.isdigit():
+        #     monto = int(monto_str)
+        #     print(cuenta.retirar(monto))
+        # else:
+        #     print("Error, no es un entero")
+        
+        
+            
     if opcion == "3":
         break
+

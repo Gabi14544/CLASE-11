@@ -6,8 +6,12 @@ class CuentaBancaria:
     def depositar(self,monto:int):#Hcerlo despues con otra menera
         if monto > 0:
             self.saldo += monto
-            return f"Ingreso exitoso.Nuevo saldo ${self.saldo}"
-        return "Monto Invalido"
+            return f"Ingreso Exitoso. Nuevo saldo: {self.saldo}"
+        return "Ingreso no Valido"
 
     def retirar(self,monto:int):
-        pass
+        if monto > 0:
+            self.saldo -= monto
+            return f"Retiro Exitoso. Nuevo saldo: {self.saldo}"
+        return "Ingreso No valido"
+    
